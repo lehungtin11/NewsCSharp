@@ -1,0 +1,82 @@
+﻿@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<h2>Thêm mới</h2>
+<form action="/Admin/Home/create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label>ID</label>
+        <input type="text" class="form-control" id="id_baiviet" name="id_baiviet" placeholder="Identity" disabled/>
+    </div>
+    <div class="form-group" >
+        <label>Tên bài viết</label>
+        <input type="text" class="form-control" id="tenbaiviet" name="tenbaiviet"/>
+    </div>
+    <div class="form-group">
+        <label>Mã bài viết</label>
+        <input type="text" class="form-control" id="mabaiviet" name="mabaiviet" />
+    </div>
+    <div class="form-group">
+        <label>Hình ảnh</label>
+        <input type="file" class="form-control" id="uploadhinh" name="uploadhinh" />
+    </div>
+    <div class="form-group">
+        <label>Nội dung</label>
+        <input type="text" class="form-control" id="noidung" name="noidung" />
+    </div>
+    <div class="form-group">
+        <label>Tóm tắt</label>
+        <input type="text" class="form-control" id="tomtat" name="tomtat" />
+    </div>
+    <div class="form-group">
+        <label>Id danh mục</label>
+        <input type="text" class="form-control" id="id_danhmuc" name="id_danhmuc" /><br />
+        <table border="1">
+            <tr>
+                <th>ID danh mục</th>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+                <td>5</td>
+                <td>6</td>
+                <td>7</td>
+                <td>8</td>
+                <td>9</td>
+            </tr>
+            <tr>
+                <th>Tên danh mục</th>
+                <td>Ăn chơi</td>
+                <td>Đẹp</td>
+                <td>Giải trí</td>
+                <td>Khám phá</td>
+                <td>Sao</td>
+                <td>Tâm sự</td>
+                <td>Thể thao</td>
+                <td>Tin tức</td>
+                <td>Tử vi</td>
+            </tr>
+        </table>
+    </div>
+    <div class="form-group">
+        <label>Ngày</label>
+        <input type="text" class="form-control" id="ngay" name="ngay" />
+    </div>
+    
+
+    <button class="btn btn-primary" type="submit">Lưu</button>
+</form>
+<style type="text/css">
+    table {
+        color: #808080;
+        width: 50%;
+        text-align: center;
+    }
+
+    th {
+        width: 10%;
+    }
+
+    td {
+        width: 5%;
+    }
+</style>

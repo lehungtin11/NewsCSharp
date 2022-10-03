@@ -1,0 +1,46 @@
+﻿@model _1905ct0020_LHT.Models.tbl_baiviet
+@{
+    ViewBag.Title = "chitiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="grid">
+    <div>
+        <div style="display: flex; margin-top: 142px; justify-content: space-between; width: 100%">
+            <a href="javascript:javascript:history.go(-1)">
+                <h2 style="color: #333; font-weight: bolder">
+                    @Model.tbl_danhmuc.tendanhmuc
+                </h2>
+            </a>
+            <h4>
+                @Model.ngay (GMT+7)
+            </h4>
+        </div>
+            
+        <span style="">
+            <h1 style="text-align: justify; margin: 16px 50px 36px 50px; font-size: 2.6rem; font-weight: bolder">@Model.tenbaiviet</h1>
+        </span>
+        <h5 style="text-align: justify; margin: 16px 50px 36px 50px; font-size: 1.6rem; font-weight: bolder; margin-bottom: 28px">@Model.tomtat</h5>
+        <div style="text-align: justify; margin: 16px 50px 36px 50px; font-size: 1.6rem; line-height: 1.6">
+            @Model.noidung
+        </div>
+        <div style="text-align: center">
+            <img style="max-width: 600px" src="~/img/@Model.hinhanh" />
+        </div>
+        <div style="margin-top: 120px; text-align:center ;background-color: #eee; border-radius: 20px; padding: 8px 16px;">
+            <span style="font-size: 1.6rem; ">Theo <a href="/home/index" style="color:#007bff ">Webtintuc</a> </span>
+        </div>
+        <div style="display: flex; justify-content: flex-start; margin: 32px 0">
+            <div style="width: 100px; display: flex; align-items: center; justify-content: space-evenly; height: 36px;">
+                <a href="https://facebook.com" style="width:20%; color: #3b5999; font-size: 36px; text-decoration: none; cursor: pointer" class="fa-brands fa-facebook-square"></a>
+                <span style="width:80%; padding-left: 16px; font-size: 1.4rem;">Chia sẻ Facebook</span>
+            </div>
+            <a href="https://twitter.com" style="margin: 0 12px ;width:32px; height:32px; color: #55acee; font-size: 36px; text-decoration: none; cursor: pointer" class="fa-brands fa-twitter-square"></a>
+            <a href="https://youtube.com" style="width:32px; height:32px; color: #ff0000; font-size: 36px; text-decoration: none; cursor: pointer" class="fa-brands fa-youtube"></a>
+        </div>
+    </div>
+    
+</div>
+
+
+

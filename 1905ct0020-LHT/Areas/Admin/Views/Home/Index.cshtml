@@ -1,0 +1,65 @@
+﻿@model IEnumerable<_1905ct0020_LHT.Models.tbl_baiviet>
+@{
+    Layout = "/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+<form action="/Admin/Home/Index" method="post">
+    <a href="/Admin/Home/create" class="btn btn-primary" style="margin-top: 60px; margin-bottom: -100px;">
+        Thêm thông tin
+    </a>
+</form>
+<div class="content">
+    <table border="1" >
+        <tr>
+            <th style="text-align:center">ID</th>
+            <th style="text-align:center">Tên</th>
+            <th style="text-align:center">Hình ảnh</th>
+            <th style="text-align:center">Tóm tắt</th>
+            <th style="text-align:center">Nội dung</th>
+            <th style="text-align:center">Ngày</th>
+            <th style="text-align:center">Danh mục</th>
+            <th style="text-align:center">Quản lý</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+        <tr class="tablecontent">
+            <td style="width: 5%">@item.id_baiviet</td>
+            <td><span>@item.tenbaiviet</span></td>
+            <td>
+                <img style="width: 100px; height: 100px; object-fit: contain;" src="~/img/@item.hinhanh" />
+            </td>
+            <td><span>@item.tomtat</span></td>
+            <td><span>@item.noidung</span></td>
+            <td>@item.ngay</td>
+            <td style="width: 5%">@item.tbl_danhmuc.tendanhmuc</td>
+            <td>
+                <a href="/Admin/Home/edit/@item.id_baiviet">Sửa</a>
+                <a href="/Admin/Home/delete/@item.id_baiviet" style="margin-left: 8px">Xoá</a> 
+            </td>
+        </tr>
+        }
+    </table>
+</div>
+
+<style>
+    .content {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    td {
+        width: 10%;
+    }
+
+    span {
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        text-overflow: ellipsis;
+        color: #333;
+        line-height: 1.6;
+        font-size: 1.5rem;
+        margin-top: 8px;
+        overflow: hidden;
+    }
+
+</style>

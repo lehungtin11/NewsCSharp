@@ -1,0 +1,99 @@
+﻿@model IEnumerable<_1905ct0020_LHT.Models.tbl_baiviet>
+<div class="main">
+    <div class="grid">
+        <div class="row">
+            @foreach (var item in Model.Where(b => b.id_danhmuc == 5).Take(1))
+            {
+                <h2 style="font-weight: bold; margin-top: 0" class="news">@item.tbl_danhmuc.tendanhmuc</h2>
+            }
+        </div>
+        <div class="row">
+            <div class="col-9 ">
+                @foreach (var item in Model.Where(b => b.id_danhmuc == 5).Take(1))
+                {
+                    <div class="box-content">
+                        <img style="width: 550px; height: 340px; object-fit:contain" class="col-8" src="~/img/@item.hinhanh" alt="">
+                        <div class="news-content col-4">
+                            <a href="chitiet/@item.id_baiviet" class="head-content">
+                                <span style="display: inline-block;">
+                                    @item.tenbaiviet
+                                </span>
+                            </a>
+                            <span style="color: #868482; font-size: 1.4rem;">
+                                @item.ngay
+                            </span>
+                            <p class="desc-content">
+                                @item.tomtat
+                            </p>
+                        </div>
+                    </div>
+                }
+                <hr />
+
+            </div>
+
+            <div class="col-3 first-news">
+                <div class="f-news">
+                    <h3 style="font-weight: bold;">Tin mới nhất</h3>
+                </div>
+                <div class="news-right">
+                    @foreach (var item in Model.Where(b => b.id_danhmuc == 5).OrderByDescending(a => a.id_baiviet).Take(1))
+                    {
+                        <div class="news-right__item">
+                            <img style="width: 250px; height: 140px; object-fit: cover; object-position:top" src="~/img/@item.hinhanh" alt="">
+                            <div class="news-content">
+                                <a href="chitiet/@item.id_baiviet" class="head-content head-content__right">
+                                    <span>
+                                        @item.tenbaiviet
+                                    </span>
+                                </a>
+                                <span style="color: #868482; font-size: 1.4rem;">
+                                    @item.ngay
+                                </span>
+                            </div>
+                        </div>
+                    }
+                    @foreach (var item in Model.Where(b => b.id_danhmuc == 5).OrderByDescending(a => a.tenbaiviet).Take(2))
+                    {
+                        <div class="news-right__item">
+                            <div class="news-content">
+                                <a href="chitiet/@item.id_baiviet" class="head-content head-content__right">
+                                    <span>
+                                        @item.tenbaiviet
+                                    </span>
+                                </a>
+                                <span style="color: #868482; font-size: 1.4rem;">
+                                    @item.ngay
+                                </span>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="row first-news">
+            <div class="f-news__another">
+                <h3 style="font-weight: bold;">Tin khác</h3>
+            </div>
+            <div class="news-middle ">
+
+                @foreach (var item in Model.Where(b => b.id_danhmuc == 5).OrderBy(a => a.tomtat))
+                {
+                    <div class="col-3">
+                        <div class="news-mid">
+                            <a href="chitiet/@item.id_baiviet" style="height:100%">
+                                <img class="news-mid__img" style="width: 100%; height: 100%; object-fit: cover;" src="~/img/@item.hinhanh" alt="">
+                            </a>
+                            <a href="chitiet/@item.id_baiviet" class="news-mid__item-head">
+                                @item.tenbaiviet
+                            </a>
+                            <span style="color: #868482; font-size: 1.4rem;">
+                                @item.ngay
+                            </span>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
